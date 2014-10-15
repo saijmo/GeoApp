@@ -2,21 +2,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
+    tools:context=".MainActivity" >
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="400dp" />
 
     <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
+        android:id="@+id/inputAddress"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="143dp"
-        android:layout_marginTop="86dp"
-        android:ems="10"
-        android:inputType="textPostalAddress"
-        tools:ignore="LabelFor" >
+        android:layout_below="@id/map"
+        android:hint="Enter Address"
+        android:inputType="textPostalAddress" >
 
         <requestFocus />
     </EditText>
+
+    <Button
+        android:id="@+id/submitAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/map"
+        android:layout_toRightOf="@id/inputAddress"
+        android:onClick="submitAddress"
+        android:text="Submit" />
+
+    <EditText
+        android:id="@+id/inputAddress2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/inputAddress"
+        android:hint="Enter Another Address"
+        android:inputType="textPostalAddress" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/findDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/inputAddress2"
+        android:onClick="findDistance"
+        android:text="Find Distance" />
 
 </RelativeLayout>
